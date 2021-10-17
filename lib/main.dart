@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Animated Textbox',
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.black87,
+        backgroundColor: Color(0xff161218),
         body: Center(
           child: AnimatedTextbox(),
         ),

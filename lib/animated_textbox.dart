@@ -7,7 +7,7 @@ class AnimatedTextbox extends HookWidget {
 
   final _height = 70.0;
   final _width = 350.0;
-  final _padding = 5.0;
+  final _padding = 8.0;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,6 @@ class AnimatedTextbox extends HookWidget {
             alignment: Alignment.bottomCenter,
             child: Container(
               height: _height,
-              width: _width,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(64),
@@ -48,23 +47,28 @@ class AnimatedTextbox extends HookWidget {
             animation: animation,
             builder: (context, child) => Align(
               alignment: Alignment(animation.value, 1),
-              child: child,
-            ),
-            child: Padding(
-              padding: EdgeInsets.only(left: _padding, right: _padding * 2),
-              child: SizedBox(
-                width: _width * 2 / 3 - _padding * 4,
-                height: _height,
-                child: Center(
-                  child: TextField(
-                    focusNode: focusNode,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Type a  name ...',
-                      hintStyle: GoogleFonts.rubik(
-                        color: Colors.black45,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: _padding * 3),
+                child: SizedBox(
+                  height: _height,
+                  width: _width * 3 / 5 -
+                      _padding * 3 * 2 +
+                      (_width * 2 / 5) * animationController.value,
+                  child: Center(
+                    child: TextField(
+                      focusNode: focusNode,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Type a  name ...',
+                        hintStyle: GoogleFonts.rubik(
+                          color: const Color(0xffa1a0a2),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      style: const TextStyle(
                         fontSize: 18,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
@@ -79,12 +83,12 @@ class AnimatedTextbox extends HookWidget {
               child: child,
             ),
             child: Padding(
-              padding: const EdgeInsets.all(5),
+              padding: EdgeInsets.all(_padding),
               child: Container(
                 height: _height - _padding * 2,
-                width: _width * 1 / 3 - _padding * 2,
+                width: _width * 2 / 5 - _padding * 2,
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: const Color(0xff3c8aee),
                   borderRadius: BorderRadius.circular(32),
                 ),
                 child: Center(
