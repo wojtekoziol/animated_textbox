@@ -1,3 +1,4 @@
+import 'package:animated_textbox/animated_textbox.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,6 +13,12 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Animated Textbox',
       debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.black87,
+        body: Center(
+          child: AnimatedTextbox(),
+        ),
+      ),
     );
   }
 }
